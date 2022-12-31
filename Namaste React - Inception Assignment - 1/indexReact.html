@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Namaste Everyone from other div tag and id above root</h1>
+    </div>
+
+    <div id="root">
+
+    Not Rendered
+
+    </div>
+
+    <div id="root2">
+        <h1>Namaste Everyone from other div tag and id</h1>
+    </div>
+    <div id="footer">
+        <h1>Footer</h1>
+    </div>
+
+<!-- using CDN links to import react -->
+<script crossorigin
+ src="https://unpkg.com/react@18/umd/react.development.js">
+</script>
+<script crossorigin
+ src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+</script>
+
+<script>
+
+    const heading =  React.createElement('h1',{
+        id:'title',
+
+    }, "Namaste React Everyone! using React cdn links")
+   
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(heading);
+
+    console.log(heading);
+
+</script>
+
+</body>
+</html>

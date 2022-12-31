@@ -1,0 +1,62 @@
+Namaste React Live Class
+Class 1 - Inception
+Assignment - 1 Theory 
+
+1)What is Emmet?
+Ans) 
+Basically, most text editors out there allow you to store and re-use commonly used code chunks, called “snippets”. While snippets are a good way to boost your productivity, all implementations have common pitfalls: you have to define the snippet first and you can’t extend them in runtime.
+
+Emmet is a toolkit which help developers to store and re-use the commonly used code called snippets, and with some shortcut keys we can get boilerplate code , which help in productivity
+
+2)● Difference between a Library and Framework?
+Ans) 
+Library provides developer to use the predefined functions and classes, we can decide where to use that, therefore we decide the flow of our code.
+And if we create mutiple methods ,classes and more functionality then also we can make our framework.
+
+The framework provides the flow of a software application and tells the developer what it needs to call first so that the application gets executes ,i.e there are rules to follow to use the functionality.
+Framework contains lots of thing from view, helper, controller
+view is the UI we see and and data or result we get on UI is managed by controller which communicate with backend.
+
+3)● What is CDN? Why do we use it?
+Ans) 
+A content delivery network (CDN) refers to a group of servers that is distributed across the world and help user for fast delivery of content over internet. 
+Ex. Caching help to copies some files , so that whenever we load again that page,then it opens more quickly and user experience is good.
+CDN services were created to solve the problem of network congestion caused by delivering rich web content.
+So getting content centrally located help in fast reponse.
+
+4)● Why is React known as React?
+Ans)React is named React because of its ability to react to changes in data. i.e React automatically renders the component and changes are reflected so when user see any changes in View , they will react to changes.
+
+5)● What is crossorigin in script tag?
+Ans)
+crossorigin in script tags are the set of attributes which provide CORS support/request.
+CORS - Cross-Origin Resource Sharing , this means web page requested from another domain outside their domain i.e sharing the resources from one domain to another domain.
+Cors reqest check whether it is safe to allow for sharing the resources from other domains.
+The resources include Audio, Video, Images, Link or external script that specifies whether to support a cross-origin request or not.
+
+6)● What is diference between React and ReactDOM
+Ans)
+React library is responsible for creating views, and 
+ReactDOM (is complimentary) library is responsible to actually render UI in the browser.
+React includes components,states,props and all that react have, and ReactDOM is package that connects React with DOM. we use it for: mounting our application to the index.html file with ReactDOM.render(). i.e connects React to web browser.
+
+7)● What is difference between react.development.js and react.production.js files via CDN?
+Ans)
+React.development is for development reasons. we have Source Maps, debugging and hot reloading ability in those builds. 
+The production build, runs in production mode which means this is the code running on your client's machine.In Production code is minified/optimised.
+
+8)● What is async and defer?
+Ans)
+Async and Defer are boolean attributes use along with to load external scripts efficiently in our webpage.
+
+Firstly if we use normal script tags - when html is passed line by line and encounters script tag then browsers stops the parsing and the fetches the script tag from network then exceutes there and then HTML parsing continues.
+So here JS is blocking the rendering of HTML page. Not good case
+
+Async -When the HTML parsing is going on, the browser will fetch the script file from network asynchronously and continue parsing HTML until the script is downloaded, then HTML parsing stops and scripts are excuted then and there and continued with HTML parsing.
+
+Defer - HTML parsing continues to go on and the browser will download/fetch the script in paralled and do HTML parsing at the same time. After parsing is done, then script files are executed 
+
+Note : Async attribute does not guarantee the order of exceution of scripts but Defer does.
+Example mutiple async attribute when scripts are dependent on each other then it may break the code.
+And if we know that script is independent then use async attribute or it is wise to use defer attribute.
+

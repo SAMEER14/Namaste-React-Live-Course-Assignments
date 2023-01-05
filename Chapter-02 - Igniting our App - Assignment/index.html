@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="root">
+        Not Rendered
+    <!-- <h1>Namaste Everyone</h1> -->
+    </div>
+
+    <div id="root">
+        <h1>Namaste React with same id root</h1>
+    </div>
+
+<!-- using CDN links to import react -->
+<!-- Not a good way , so we will install react in our Project and its not good way because if new version comes then changing again scripts tags is not good-->
+<!-- <script crossorigin
+ src="https://unpkg.com/react@18/umd/react.development.js">
+</script>
+<script crossorigin
+ src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+</script> -->
+
+<!-- Install react
+npm install react and then import it in project -->
+<!-- and make script tag attribute to type module because browser cannot have import export  as it does not know import export statements-->
+
+<script type="module" src="./index.js">
+
+</script>
+
+</body>
+</html>

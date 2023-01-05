@@ -1,0 +1,29 @@
+{
+  "name": "chapter-02---igniting-our-app---assignment",
+  "version": "1.0.0",
+  "description": "Chapter 02 Igniting our App - Assignment",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SAMEER14/Namaste-React-Live-Course-Assignments.git).git"
+  },
+  "author": "Sameer Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SAMEER14/Namaste-React-Live-Course-Assignments.git)/issues"
+  },
+  "homepage": "https://github.com/SAMEER14/Namaste-React-Live-Course-Assignments.git)#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 14 chrome versions"
+  ]
+}

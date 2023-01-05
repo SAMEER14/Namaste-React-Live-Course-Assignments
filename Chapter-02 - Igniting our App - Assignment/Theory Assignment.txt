@@ -1,0 +1,162 @@
+Namaste React Live Class
+Class 02 - Igniting our App
+Assignment - 2 Theory 
+
+Q)●What is `NPM`?
+ANS) 
+NPM is not node package manager , it is a package manager which contains different types of packages , which can be used to optimise the app and many more features.
+npm is the world's largest software registry.It is an online repository for the publishing of open-source Node
+The free npm Registry has become the center of JavaScript code sharing.
+NPM is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. It is extremely configurable to support a wide variety of use cases. Most commonly, it is used to publish, discover, install, and develop node programs.
+
+Q)●What is `Parcel/Webpack`? Why do we need it?
+ANS) Parcel/Webpack/Vite these are the bundlers for the project
+Bundler => A bundler is a development tool that combines many JavaScript code files into a single one that is production-ready loadable in the browser. A fantastic feature of a bundler is that it generates a dependency graph as it traverses your first code files.
+Parcel/Webpack are the these bundlers 
+Parcel => Parcel. js is an open-source bundler. Parcel provides with mutiple features => PARCEL IS THE BEAST 
+* Creates a server
+* HMR - Hot Module Replacement * uses File Watcher algorithm written in C++ 
+* BUNDLING
+* MINIFY
+* Cleaning our Code (removes console statements)
+* Dev and Production Build 
+* Super Fast build algorithm => take time on first build then time decreases on every next build 
+* Image Optimization
+* Caching while development
+* Compression
+* Compatble with older version of browser
+* provides with HTTPS on dev
+* manages different port Number for running more than 1 project 
+* Consistent Hashing Algorithm
+* Zero Configuration
+* and many more 
+* Transitive Dependencies
+
+WEBPACK => webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then combines every module your project needs into one or more bundles, which are static assets to serve your content from 
+webpack does not require a configuration file to bundle your project., it is already configurable to better fit of our needs.
+
+We need these bundlers for to make code production ready with following features =>
+Production ready app should be => * Manify* Bundle* Optimisation* remove console log* Caching 
+
+Q)●-What is `.parcel-cache` ?
+ANS) stores information about our project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason for parcel to be fast in development mode.
+this is space that parcel creates on its own and contains files for the manify ,HMR, etc so that on rebuild App loads fast
+
+Q)●-What is `npx` ?
+ANS)
+npx is a tool for executing Node packages.
+npx is also a CLI tool whose purpose is to make it easy to install and manage dependencies hosted in the npm registry.
+NPX: The npx stands for Node Package Execute and it comes with the npm, when you installed npm then automatically npx will installed. It is an npm package runner that can execute any package that you want from the npm registry without even installing that package. The npx is useful during a single time use package. If you have installed npm older version then npx is not installed in your system.
+
+Q)●-What is difference between `dependencies` vs `devDependencies`
+ANS)
+devDependencies are modules which are only required during development phase, while dependencies are modules which are also required at runtime
+
+dependencies contains packages which are used for overall development of App also for production and testing , it consists of all the packages that are used in the project with its version number.
+
+Q)●-What is Tree Shaking?
+ANS)
+Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
+Tree shaking means the removal of dead code unnecessary code in JavaScript.
+In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) to automatically remove dead code when bundling multiple JavaScript files into single files. This is important for preparing code that is production ready, for example with clean structures and minimal file size.
+
+Q)●-What is Hot Module Replacement?
+ANS)Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload. This can significantly speed up development in a few ways:
+*Retain application state which is lost during a full reload.
+*Save valuable development time by only updating what's changed.
+*Instantly update the browser when modifications are made to CSS/JS in the source code, which is almost comparable to changing styles directly in the browser's dev tools.
+
+Q)●-List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+ANS)
+*HMR - Helps in loading the application faster when something is changed in App.
+*Manification - Removes unnecessary or redundant data without affecting the functionality of App.
+*Create a server = creates a server to run the application in view
+*Build
+*Compatble with older version of browser
+
+Q)●-What is `.gitignore`? What should we add and not add into it?
+ANS)
+.gitignore => A gitignore file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected.
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project.
+
+The entries in this file can also follow a matching pattern.
+* is used as a wildcard match
+/ is used to ignore pathnames relative to the .gitignore file
+# is used to add comments to a .gitignore file
+
+This is an example of what the .gitignore file could look like:
+# Ignore Mac system files
+.DS_store
+# Ignore node_modules folder
+node_modules
+# Ignore all text files
+*.txt
+# Ignore files related to API keys
+.env
+# Ignore SASS config files
+.sass-cache
+=========================================================================
+Git sees every file in your working copy as one of three things:
+
+tracked - a file which has been previously staged or committed;
+untracked - a file which has not been staged or committed; or
+ignored - a file which Git has been explicitly told to ignore.
+Ignored files are usually build artifacts and machine generated files that can be derived from your repository source or should otherwise not be committed. Some common examples are:
+
+dependency caches, such as the contents of /node_modules or /packages
+compiled code, such as .o, .pyc, and .class files
+build output directories, such as /bin, /out, or /target
+files generated at runtime, such as .log, .lock, or .tmp
+hidden system files, such as .DS_Store or Thumbs.db
+personal IDE config files, such as .idea/workspace.xml
+
+https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+
+Q)●-What is the difference between `package.json` and `package-lock.json`
+ANS)
+package.json => After initialising npm we get a file package.json this file is the configiuration that npm needs.
+t contains informatin of project like version, dev(dependencies), author etc.
+
+.package-lock.json => This file is also come when npm is initialised, npm init.
+This file tells the exact version our project is using, this files does not contain any tilde or caret sign i.e. the version mentioned are locked and will not be updated.
+package-lock.json can be commit to git.
+
+Q)●-Why should I not modify `package-lock.json`?
+ANS)
+package-lock.json is automatically generated for any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
+The file is intended to be committed into source repository
+it maintains integrity (hash) of it also i.e version should be same on machine and excatly on production or not
+So, modifying something will lead to not work in production build.
+
+Q)●-What is `node_modules` ? Is it a good idea to push that on git?
+ANS)
+So when we install any package with npm ,they are downloaded from the web and copied into the node_modules folder and it contains that package or library.
+It is the database of the npm.
+It is not recommended to push the node modules folder in got as the size of the folder is big and as it contains all the packages what are project need , we have all the version, scripts etc information present in packge.json and package-lock.json from there we can install those package and its dependencies.
+
+Q)●-What is the `dist` folder?
+ANS)
+*This folder keeps the files minified (the minified code is run on the web), it is a development bin, so when we run command npx parcel entry point it creates a development build for us on the server -> 
+* And all the build happen and the files will come inside Dist folder => even after deleting, App will run only when from package.json we remove the entry point file and hit command again it will run and make dist folder again and makes the file which we have in our project and push in dist folder.
+The /dist folder also comprises of all the compiled modules that may or may not be used with other systems.
+* PRODUCTION build -> npx parcel build index.html
+
+Q)●-What is `browserlists`
+ANS)
+browserlists are the list of browser which can support the application
+Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. It's used by frameworks/libraries such as React, Angular and Vue, but it's not limited to them. 
+
+
+Read about dif bundlers: vite, webpack, parcel
+Read about: ^ - caret and ~ - tilda
+Read about Script types in html (MDN Docs)
+
+# References
+● Creating your own create-react-app -> https://medium.com/@JedaiSaboteur/creating-a-react-app-from-scratch-f3c693b84658
+● Parcel Documentation ->
+● Parcel on Production -> https://parceljs.org/getting-started/webapp/
+● BrowsersList: https://browserslist.dev
+
+
+"main": "index.html", remove main target name from package.json to be entry point be index.html

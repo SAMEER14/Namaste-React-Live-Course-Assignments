@@ -36,7 +36,7 @@ WEBPACK => webpack is a static module bundler for modern JavaScript applications
 webpack does not require a configuration file to bundle your project., it is already configurable to better fit of our needs.
 
 We need these bundlers for to make code production ready with following features =>
-Production ready app should be => * Manify* Bundle* Optimisation* remove console log* Caching 
+Production ready app should be => * Manify* Bundle* Optimisation* remove console log* Caching , etc
 
 Q)●-What is `.parcel-cache` ?
 ANS) stores information about our project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason for parcel to be fast in development mode.

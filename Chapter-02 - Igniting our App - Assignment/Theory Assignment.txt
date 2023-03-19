@@ -40,7 +40,7 @@ Production ready app should be => * Manify* Bundle* Optimisation* remove console
 
 Q)●-What is `.parcel-cache` ?
 ANS) stores information about our project when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scratch. It's a key reason for parcel to be fast in development mode.
-this is space that parcel creates on its own and contains files for the manify ,HMR, etc so that on rebuild App loads fast
+this is space that parcel creates on its own when we execute/ignite our app and contains files for the manify ,HMR, etc so that on rebuild App loads fast
 
 Q)●-What is `npx` ?
 ANS)

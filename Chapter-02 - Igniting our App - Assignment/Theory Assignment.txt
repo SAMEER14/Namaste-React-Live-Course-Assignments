@@ -116,7 +116,7 @@ https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 Q)●-What is the difference between `package.json` and `package-lock.json`
 ANS)
 package.json => After initialising npm we get a file package.json this file is the configiuration that npm needs.
-t contains informatin of project like version, dev(dependencies), author etc.
+it contains informatin of project like version, dev(dependencies), author etc.
 
 .package-lock.json => This file is also come when npm is initialised, npm init.
 This file tells the exact version our project is using, this files does not contain any tilde or caret sign i.e. the version mentioned are locked and will not be updated.

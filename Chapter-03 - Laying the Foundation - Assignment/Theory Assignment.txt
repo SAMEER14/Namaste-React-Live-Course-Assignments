@@ -1,0 +1,76 @@
+Namaste React Live Class
+Class 03 - Laying the Foundation
+Assignment - 3 Theory 
+
+=================================================================================================
+
+Theory Assignment:
+* What is JSX?
+* Superpowers of JSX.
+* Role of type attribute in script tag? What options can I use there?
+* {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+
+======================================
+* What is JSX?
+=>Assume it javascript XML =>JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
+const element = <h1>Hello, world!</h1>;
+But the syntax is neither a string nor HTML.
+It is a syntax extension to JavaScript, it comes with the full power of JavaScript, JSX produces React “elements”.
+No its not html inside javascript => These are HTML like syntax.
+React developers wanted whole html in JS so they came up with JSX that converts HTML tags into react elements. then these object render to HTML(DOM) with help o Babel
+JSX => React.createElement => JS Object => HTML(DOM).
+
+Ex.
+const name = 'SAM';
+const element = <h1>Hello, {name}</h1>;
+
+Ex.
+const headingJSX = <h1 id="title" key="h2">
+    Namaste React from JSX
+    </h1>
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(headingJSX);
+
+================================
+* Superpowers of JSX.
+=>
+-Most important thing JSX provides is the Readibility for others
+-with help jsx we can write markup and logic in same file , and with help of this we can make a component that returns a html.
+-JSX help react to show more useful error and warning messages.
+-JSX -> modern javascript is converted to compatible version so that browser can understand with help of babel
+-JSX => React.createElement => Object => HTML(DOM).
+-Data from Api is secured by JSX 
+ * JSX make sure App is safe so When recieve data JSX does the "Sanitisation" to secure the App.
+ -using curly braces { } in JSX syntax allow us to perform javascript any operation in it
+
+=================================
+* Role of type attribute in script tag? What options can I use there?
+=>
+-The type attribute specifies the type of the script.
+-The type attribute identifies the content between the <script> and </script> tags.
+-
+For example we use type script as module when we starts executing our app and in file if browser see import keyowd ,as browser dont understand import keyword so it will throw error , to fix this we will use type module in script so that browser understands that this is not ordinary js file it is a module that contains React.
+-<script type="module" src="./index.js"></script>
+
+========================================
+
+* {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+=>{TitleComponent} using like this means TitleComponent is JSX expression used and is also known as React element.
+-Normal react element with JSX => Use in curly braces => {title}
+
+=>{<TitleComponent/>} ->Component returning some JSX.
+
+=>{<TitleComponent></TitleComponent>} ->when the component has child components, we have to write like this:
+<TitleComponent>
+    <Child1 />
+    <Child2/>
+</TitleComponent>
+-> If no child component is present then {<TitleComponent/>} is equivalent to {<TitleComponent></TitleComponent>}
+
+
+==============================================
+
+=>Can we have multiple root ? => id root can be only 1
+=>Can we have multiple root.render ? => we can have multiple root.render targeting different id and then render it, but with same id as root.render if we write more than once it will only render once
+=>Can we call 2 React.Fragment ? => No it will give error

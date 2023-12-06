@@ -1,0 +1,238 @@
+Namaste React Live Class
+Class 04 - Talk is Cheap, show me the code
+Assignment - 4 Theory 
+
+=================================================================================================
+
+Chapter 04 - Talk is Cheap, show me the code
+Theory Assignment:
+Is JSX mandatory for React?
+Is ES6 mandatory for React?
+{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+How can I write comments in JSX?
+What is <React.Fragment></React.Fragment> and <></>?
+What is Reconciliation in React?
+What is React Fiber?
+Why do we need keys in React?
+Can we use index as keys in React?
+What is props in React? Ways to.
+What is Config Driven UI?
+What is Virtual DOM ?
+
+References:
+Code Link - https://bitbucket.org/namastedev/namaste-react-live/src/master/
+React without JSX - https://legacy.reactjs.org/docs/react-without-jsx.html
+Virtual DOM - https://legacy.reactjs.org/docs/faq-internals.html
+Reconciliation - https://legacy.reactjs.org/docs/reconciliation.html
+React Fiber Architecture - https://github.com/acdlite/react-fiber-architecture
+React Without ES6 - https://legacy.reactjs.org/docs/react-without-es6.html
+Index Keys as Anti-Pattern - https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/
+
+
+================================================================================================================================
+* Is JSX mandatory for React?
+=>
+No JSX is not mandatory for react JSX is just a syntactic sugar to write react code more easy way when we want to make a complicates web application. 
+Each JSX element is just syntactic sugar for calling React.createElement(component, props, ...children). So, anything you can do with JSX can also be done with just plain JavaScript.
+Example -> with JSX =>
+
+const Hello = () => {
+    return(
+        <>
+        <div>Hello JSX</div>;
+        </>
+    );
+};
+--------------------------------------------------------------------------
+Without JSX => 
+const Hello = () => {
+    return( React.createElement('div', null, `Hello without jsx`);
+    );
+}
+
+we can use shorthand form -> const e = React.createElement; to make our code more easier to read instead of writing React.createElement again and again -> it can be almost convenient to use React without JSX.
+
+JSX is converted to JavaScript, can be understand by online Babel compiler ->that how it gets converted
+
+===============================================================================================================================
+* Is ES6 mandatory for React?
+=>
+ES6 - ECMAScript 2015, introduced several new features and improvements to the JavaScript language.
+While using ES6 is not mandatory for building React applications, it is highly recommended as it offers several benefits such as improved syntax, arrow functions, template literals, and more.
+
+Many of the features introduced in ES6 make writing React code easier and more efficient. For example, the spread operator can be used to pass props to child components, and arrow functions can simplify the way event handlers are defined.
+
+In addition, many of the popular React libraries and tools, such as Redux and React Router, use ES6 features extensively. Using ES6 in your React projects can therefore make it easier to work with these libraries and tools.
+
+That being said, it is possible to build React applications without using ES6. However, it is recommended that developers learn and use ES6 to take full advantage of the benefits it offers.
+
+===========================================================================================================================
+
+* {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX.
+=>{TitleComponent} using like this means TitleComponent is JSX expression used and is also known as React element.
+-Normal react element with JSX => Use in curly braces => {title}
+
+=>{<TitleComponent/>} ->Component returning some JSX.
+
+=>{<TitleComponent></TitleComponent>} ->when the component has child components, we have to write like this:
+<TitleComponent>
+    <Child1 />
+    <Child2/>
+</TitleComponent>
+-> If no child component is present then {<TitleComponent/>} is equivalent to {<TitleComponent></TitleComponent>}
+
+========================================================================================================================
+
+* How can I write comments in JSX?
+=>
+{/* This is a single line comment */}
+
+{/* This is
+a multiline 
+comment */}
+
+==========================================================================================================================
+
+* What is <React.Fragment></React.Fragment> and <></>?
+=>
+-> <React.Fragment></React.Fragment> => In react creating a component in the end its returning the multiple elements, Fragments let us group a list of children without adding extra nodes to the DOM.
+In react there should be one opening and one closing tags , inside that all other children should be there.
+EX .
+return (
+    <React.Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </React.Fragment>
+  );
+We use <div> </div> but it creates a parent node in DOM
+
+-> <></> , alternate of using React.Fragment is using empty opening and closing tags and put the multiple elements inside it
+Ex.
+return (
+    <>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </>
+  );
+
+The only difference between them is that the shorthand version does not support the key attribute.
+
+====================================================================================================================
+
+* What is Reconciliation in React?
+=> It is process where react updates browserDOM. ,It helps in react to show the updates fast , because it use a algorithm called Diffing algorithm.
+Diffing algorithm is responsible for react fast based apps.
+React calculates the difference between the real Dom and the virtual dom and see what are the changes are to be happen and with help algorithm it only render the part that need to changed or added in real DOM .
+
+Ex.
+When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes.
+
+<div className="before" title="stuff" />
+<div className="after" title="stuff" />
+
+By comparing these two elements, React knows to only modify the className on the underlying DOM node.
+
+Recursing On Children -> 
+<ul>
+  <li>first</li>
+  <li>second</li>
+</ul>
+
+<ul>
+  <li>first</li>
+  <li>second</li>
+  <li>third</li>
+</ul>
+
+here react gets that the line to be added where , but if we need to add <li>third</li> before first - inserting an element at the beginning has worse performance. and trees work poorly.
+To solve this giving keys is important 
+giving indexes is not good and also random keys 
+
+===============================================================================================================================
+
+* What is React Fiber?
+=>
+
+
+
+
+
+
+
+
+
+=========================================================================================================================
+
+* Why do we need keys in React?
+=>
+A key is the only thing React uses to identify DOM elements. What if we want to push an item to the list or remove something in the middle? If the key is same as before React assumes that the DOM element represents the same component as before. But that is no longer true.
+Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity
+keys are unique Identifier used to give an identity to the elements in the lists
+
+Ex.
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+
+The best way to pick a key is to use a string that uniquely identifies a list item among its siblings. Most often you would use IDs from your data as keys
+
+const todoItems = todos.map((todo) =>
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+
+=========================================================================================================================
+
+* Can we use index as keys in React?
+=>
+We can use keys in react but it is not recommended using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.
+If we pass nothing React uses the index as key,and providing it by ourselfs then it can lead to unpredictable results.
+
+
+=========================================================================================================================
+
+* What is props in React? Ways to.
+=>
+Props in react are the properties , props are like passing the arguments to react component, 
+helps in passing data from one component to another
+Ex.
+function App() {
+  return (
+    <div className="App">
+      <TitleComponent title ="passingProps"/> 
+    </div>
+  )
+}
+
+-props end of the day is Object => so we can use them in JSX {}, 
+-WHEN EVER WE NEED TO SHOW DATA DYNAMICALLY WE NEED TO PASS PROPS.
+
+=========================================================================================================================
+
+* What is Config Driven UI?
+=>
+Config Driven UI are the UI which deal with configs the configurations we recieves from Api -> backend and according to it UI is rendered. As the UI is written once and it is rendered according to the configs recieved.
+Config Driven UI is the good practice while making Apps as it shows more dynamic data , which helps user to have good user experiece.
+For example -> a food delivery site render different UI for different cities , some cities showed the offer some not, this is done using config.
+
+
+=========================================================================================================================
+
+* What is Virtual DOM ?
+=> 
+The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+This approach enables the declarative API of React: we tell React what state you want the UI to be in, and it makes sure the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
+“virtual DOM” is more of a pattern than a specific technology -> if can be find any part of S/W engineering => in react - "virtual DOM” is usually associated with React elements since they are the objects representing the user interface.
+React, however, also uses internal objects called “fibers” to hold additional information about the component tree. They may also be considered a part of “virtual DOM” implementation in React.
+
+* The Shadow DOM is a browser technology , it is different from virtual DOM. It is designed primarily for scoping variables and CSS in web components. The virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
+
+How Virtual DOM actually makes things faster/How Virtual DOM Helps React
+
+============================================================================================================================

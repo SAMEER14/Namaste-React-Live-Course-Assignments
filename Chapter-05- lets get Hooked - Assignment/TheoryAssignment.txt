@@ -1,0 +1,161 @@
+Component name and export default Component_name should be same
+File name can be different from component name but we import Component_name from ./file_name (extension of file not mandatory)
+
+https://legacy.reactjs.org/docs/faq-structure.html
+
+=================================================================================================================
+/* NOTES => for export/import
+
+export default CDN_URL;
+export default LOGO_URL;
+Error - A module cannot have multiple default exports.
+
+i.e 2 types of import and 2 types of export
+
+1 way -> default export/import =>
+export default Component
+import Component from "path"
+
+2 way -> when in single file we need to import mutiple things => because we cannot write twice the default export , it will throw error
+
+=>to export this we use something "export name" 
+i.e if we want to export multiple things from same file we use export name
+importing this will be also different
+
+Named export/import
+import {Component} from "path"
+
+*/
+
+// export the data like this is normal export there is one more way 
+// i.e 2 types of import and 2 types of export
+
+// 1 way -> default export 
+// 2 way -> when in single file we need to import mutiple things => because we cannot write twice the default export , it will throw error
+
+==================================================================================================================
+Namaste React Live Class
+Chapter 05 - Let's get Hooked!
+Assignment - 5 Theory 
+
+--------------------------------------------------------------------------------------------------------
+Theory Assignment:
+What is the difference between Named export, Default export, and * as export?
+What is the importance of config.js file?
+What are React Hooks?
+Why do we need useState Hook?
+--------------------------------------------------------------------------------------------------------
+Coding Assignment:
+Clean up your code.
+Create a Folder Structure for your app.
+Make different files for each Component.
+Create a config file.
+Use all types of import and export.
+Create a Search Box in your App.
+Use useState to create a variable and bind it to the input box.
+Try to make your search bar work.
+---------------------------------------------------------------------------------------------------------
+References:
+Akshay Saini Code Link - https://bitbucket.org/namastedev/namaste-react-live/src/master/
+
+=================================================================================================
+
+Theory Assignment:
+
+* What is the difference between Named export, Default export, and * as export?
+=> ES6 provides us to import a module and use it in other files by exporting it.
+There are two types of export-
+
+*   Named Export - Name export is used when in single file we need to export mutiple things as default export can be used once in file and to use it other files we need to use it within curly braces { } in the other file.
+Ex.
+export const Component1 = () => {}
+export const Component2 = () => {}
+------------------------------------------
+ex. importing a single named export
+import { Component } from "./Component";
+
+// ex. importing multiple named exports
+import { Component, Component2 } from "./MyComponent";
+
+// ex. giving a named import a different name by using "as":
+import { Component2 as NewComponent } from "./MyComponent";
+
+------------------------------------------
+
+*   Default Export - In default export we can use it once in file , generally we use it to export the component file and use it other file .
+to use it other file we just import name destination (no curly breaces used)
+Ex.
+const MyComponent = () => {
+
+}
+export default MyComponent;
+----------------------------------------
+import MyComponent from "./MyComponent";
+
+===========================================================================================================================
+
+* What is the importance of config.js file?
+=> Config.js file are files which contains the data which is used all through our application.
+=>Like the images , urls which is used in mutiple places in application .
+=> Also when we are keeping these in single config.js file we need to use Named export to use it other files.
+=>we can also name this file as constants.js
+
+===========================================================================================================================
+
+* What are React Hooks?
+=> React Hooks are the normal JavaScript function => which is given to us by react -> it is prebuild and and has some logic in it
+=> It is a utility function given by react to us
+=>It was introduced in react version 16.8 
+=>Hooks also us to manage the state and side effects in application.
+=>2 very Important Hooks
+1-> useState()
+2-> useEffect()
+
+99% we will be using these hooks ->
+80% of time we will use the useState and 20% of time we will use useEffect. and very less no of time there are several other Hooks in react
+
+=>There are many other hooks in react 
+*State Hooks => 
+->useState (manages state)
+->useReduces (updates the state variable(logic insides) in reduces function)
+*Context Hooks => 
+-> reads and subscribes to a context.
+*Ref Hooks =>
+-> useRef declares a ref. You can hold any value in it, but most often it’s used to hold a DOM node.
+->useImperativeHandle lets you customize the ref exposed by your component. This is rarely used.
+*Effect Hooks 
+->useEffect connects a component to an external system.
+->There are two rarely used variations of -useEffect with differences in timing:
+useLayoutEffect fires before the browser repaints the screen. You can measure layout here.
+-useInsertionEffect fires before React makes changes to the DOM. Libraries can insert dynamic CSS here.
+
+=>Performance Hooks
+->useMemo lets you cache the result of an expensive calculation.
+->useCallback lets you cache a function definition before passing it down to an optimized component.
+=>Other Hooks 
+These Hooks are mostly useful to library authors and aren’t commonly used in the application code.
+-useDebugValue lets you customize the label React DevTools displays for your custom Hook.
+-useId lets a component associate a unique ID with itself. Typically used with accessibility APIs.
+-useSyncExternalStore lets a component subscribe to an external store.
+
+=> You can also define your own custom Hooks as JavaScript functions.
+
+//https://react.dev/reference/react
+===========================================================================================================================
+
+* Why do we need useState Hook?
+=> *useState() ->used to maintain state in our React application 
+->it is 'Superpowerful' state Variable in react ->The useState hook is a special function that takes the initial state as an argument and returns an array of two values.
+->The current state->The set function -> lets us update the state to a different calue and trigger a re-render -> here concepts of recoincilation comes -> which makes React faster.
+->And useState() function takes a default value for the state variable.
+
+To use the useState we need to import from React and we need to use as Named import.(i.e somebody react developer must have used const useState .....)
+
+Ex.
+import React from "react";
+import { useState } from "react";
+
+const [name, setName] = useState('Sam');
+
+===========================================================================================================================
+

@@ -1,0 +1,84 @@
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.text{
+    height: 200px;
+    width: 145px;
+    font-style: italic;
+}
+
+.logo{
+    height: 125px;
+    width: 155px;
+}
+
+.nav-items > ul{
+    list-style-type: none;
+    display: flex;
+}
+  
+.nav-items > ul > li{
+    padding: 20px;
+    /* margin: 10px; */
+}
+
+/* Body Component */
+.body{
+    border: 1px solid black;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.res-card{
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+    /* height: 300px; */
+    /* border: 1px solid black; */
+}
+  
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid blue;
+}
+  
+.res-logo{
+    width: 100%;
+}
+  
+.search{
+    padding: 10px;
+}
+
+.details-font{
+    font-size: 17px;
+    font-weight: 500; 
+}
+
+/* Footer */
+/* .footer{ */
+    /* border: 1px solid black; */
+    /* margin: 10px; */
+    /* padding: 10px;
+    position: relative;
+    left: 0;
+    bottom: 0; */
+/* } */
+
+.filter-btn{
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* right now we are using .css file we keep it here which will have all css
+
+Later we will use tailwind css which will not require .css
+*/

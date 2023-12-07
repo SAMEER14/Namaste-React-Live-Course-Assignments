@@ -1,0 +1,28 @@
+{
+  "name": "chapter-05--lets-get-hooked---assignment",
+  "version": "1.0.0",
+  "description": "Chapter 05 - Let's get Hooked - Assignment",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAMEER14/Namaste-React-Live-Course-Assignments.git"
+  },
+  "author": "Sameer Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SAMEER14/Namaste-React-Live-Course-Assignments/issues"
+  },
+  "homepage": "https://github.com/SAMEER14/Namaste-React-Live-Course-Assignments#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
